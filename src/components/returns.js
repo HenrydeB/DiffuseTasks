@@ -53,34 +53,3 @@ export default function Exchange() {
 }
 
 
-
-
-  
-  // async function getReturn() {
-  
-  //   await onesplitContract.methods.getExpectedReturn(
-  //     toToken,
-  //     fromToken,
-  //     new BigNumber(amount).shiftedBy(ethDecimal),
-  //     100,
-  //     0
-  //   )
-  //   .call({}, (err, res) => {
-  //     if (err) console.error(err);
-  //     console.log(`
-  //     from: ${fromToken}, 
-  //     to: ${toToken}, 
-  //     amount: ${amount},
-  //     returnAmount: ${new BigNumber(res.returnAmount)
-  //     .shiftedBy(-ethDecimal)
-  //     .toString()}
-  //       `);
-  //       splitExchanges.forEach((DEX, i) => {
-  //         console.log(`${DEX}: ${res.distribution[i]}%`)
-  //       })
-  //   })
-  // }
-  // getReturn()
-
-  // return [exchange];
-
