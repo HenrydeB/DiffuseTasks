@@ -1,0 +1,32 @@
+[
+    {
+        "name": "PolyShield Token",
+        "address": "0xf239e69ce434c7fb408b05a0da416b14917d934e",
+        "symbol": "SHI3LD",
+        "decimals": 18
+    },
+    {
+        "name": "kogecoin.io",
+        "address": "0x13748d548D95D78a3c83fe3F32604B4796CFfa23",
+        "symbol": "KOGE",
+        "decimals": 9
+    },
+    {
+        "name": "Pear Token",
+        "address": "0xc8bcb58caEf1bE972C0B638B1dD8B0748Fdc8A44",
+        "symbol": "PEAR",
+        "decimals": 18
+    },
+    {
+        "name": "Sing Token",
+        "address": "0xCB898b0eFb084Df14dd8E018dA37B4d0f06aB26D ",
+        "symbol": "SING",
+        "decimals": 18
+    },
+    {
+        "name": "DAI Stablecoin",
+        "address": "0x8f3cf7ad23cd3cadbd9735aff958023239c6a063",
+        "symbol": "DAI",
+        "decimals": 18
+    }
+]
