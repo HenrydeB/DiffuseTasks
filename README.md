@@ -1,35 +1,48 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
-
 ## Getting Started
 
-First, run the development server:
+#### note: this project uses the MetaMask extension, to ensure connectivity to your wallet download MetaMask (https://metamask.io/download)
+# Table of Contents
+
+1. [Steps](#steps)
+2. [Functionality](#functionality)
+3. [Following Up](#following-up)
+4. [Summary](#summary)
+
+## Steps
+
+1. First clone the repository onto your local environment.
+2. From there you can run the development server:
 
 ```bash
 npm run dev
 # or
 yarn dev
 ```
+3. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+![Diffuse main page](https://user-images.githubusercontent.com/69326962/146607951-69643216-64b5-4a3d-8ebe-0a45dd094063.png)
+4. From there, click "connect wallet"
+5. You will be prompted to connect your wallet via metamask, in which you will need your private login information to access said wallet, not just the address.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Functionality
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+After the wallet is connected, you will be able to use the dropdown menu to select which token you would like to check your total balance of. 
+Tokens available to be checked are: SHI3LD, KOGE, PEAR, SING, and DAI stablecoin. Due to timing issues, the conversion from the first four coins
+listed into DAI stablecoin is currently not available, but the code is available in src/components/returns.js.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+## Following Up
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+Following up with this project, I will continue troubleshoot the code that I have under the returns.js file. The intention of the code was to call the various tokens needed from the tokenlist.JSON file via useState and labeling them as 'fromToken', pulling the DAI coin data from the address given to me in the email and lableing it as 'toToken'. From there, we would pass both of those tokens into a getExpectedReturn method from the onesplitContract. Our final result would appear under the constant 'trade' by creating a new BigNumber that returns the result of returnAmount. Lists of consolelogs used to keep track of progress through the function.
+![returnjs](https://user-images.githubusercontent.com/69326962/146609251-621b0436-91ee-4fbc-8a2e-140423df2643.png)
 
-## Learn More
+Hindsight, I believe there must have been an easier for me to achieve my desired result and the route that I took ended up taking too much time.
 
-To learn more about Next.js, take a look at the following resources:
+## Summary
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+I thoroughly enjoyed this project. I learned a lot about blockchain development, security, and the many platforms that can be used for blockchain development. I do believe I will be continuing in my research into this subject. This was an excellent assignment, and arguably the most fun I have had coding in a few months.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
-# DiffuseTasks
+ 
+
+
