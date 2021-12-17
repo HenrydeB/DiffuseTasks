@@ -4,7 +4,7 @@ import tokenlist from '../assets/tokenlist.json';
 import { useState } from 'react';
 import react from 'react';
 import useBalance from '../actions/useBalance';
-import exchange from '../components/returns';
+import Exchange from '../components/returns';
 
 export default function Home() {
 
@@ -16,6 +16,8 @@ const [balance] = useBalance(
   selectedToken.address,
   selectedToken.decimals
 )
+
+
 
 // const exchange = trade;
 
@@ -29,7 +31,8 @@ const [balance] = useBalance(
           ))}
         </select>
         <a>{selectedToken.name} balance {balance}</a>
-        <a>Exchanged to DAI: {exchange}</a>
+        <a>Exchanged to DAI: </a> 
+        {/* NOTE: the Exchange component from returns.js should go here */}
       </div>
     )
 }

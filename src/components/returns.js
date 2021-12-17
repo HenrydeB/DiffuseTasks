@@ -12,7 +12,8 @@ import useBalance from '../actions/useBalance';
   const onesplitAddress = "0xC586BeF4a0992C495Cf22e1aeEE4E446CECDee0E"; // 1split contract address on Main net
   const daiAddress = '0x8f3cf7ad23cd3cadbd9735aff958023239c6a063';
 
-const exchange = () => {
+export default function Exchange() {
+
   const [selectedToken] = useState(tokenlist[0])
   const fromToken = selectedToken.address;
   const fromTokenDecimals = selectedToken.decimals;
@@ -30,25 +31,29 @@ const exchange = () => {
   const onesplitContract = new web3.eth.Contract(oneSplitABI, onesplitAddress);
 
   //const daiToken = new web3.eth.Contract(erc20ABI, fromToken);
-  onesplitContract.methods.getExpectedReturn(fromToken, toToken, new BigNumber(amountToExchange).shiftedBy(fromTokenDecimals).toString(), 100, 0).call({ from: '0x008062acA356B5F93F2F14b71Fd73db91A606d0C' }, function (error, result) {
+
+  onesplitContract.methods.getExpectedReturn(fromToken, toToken, new BigNumber(amountToExchange)
+  .shiftedBy(fromTokenDecimals).toString(), 100, 0)
+  .call({ from: '0x008062acA356B5F93F2F14b71Fd73db91A606d0C' }, function (error, result) {
     if (error) {
         console.log(error)
         return;
     }
-    console.log("Trade From: " + fromToken)
-    console.log("Trade To: " + toToken);
-    console.log("Trade Amount: " + amountToExchange);
-    const trade = new BigNumber(result.returnAmount).shiftedBy(-fromTokenDecimals).toString();
-    console.log(trade);
-    console.log("Using Dexes:");
-    for (let index = 0; index < result.distribution.length; index++) {
-        console.log(DEX[index] + ": " + result.distribution[index] + "%");
+      console.log("Trade From: " + fromToken)
+      console.log("Trade To: " + toToken);
+      console.log("Trade Amount: " + amountToExchange);
+      const trade = new BigNumber(result.returnAmount).shiftedBy(-fromTokenDecimals).toString();
+      console.log(trade);
+      console.log("Using Dexes:");
+      for (let index = 0; index < result.distribution.length; index++) {
+          console.log(DEX[index] + ": " + result.distribution[index] + "%");
     }
-    return [trade];
-});
+    return trade;
+  });
 }
 
-export default exchange;
+
+
 
   
   // async function getReturn() {
